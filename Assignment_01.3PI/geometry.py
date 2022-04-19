@@ -2,12 +2,12 @@ import rhino3dm as rg
 import networkx as nx
 import random
 
-def createGridGraph(x, y, z):
+def createGridGraph(x, y):
 
-    M = nx.grid_2d_graph(x,y,z)
+    M = nx.grid_2d_graph(x,y)
     return M
 
-def addRandomWeigrhs(G):
+def addRandomWeigths(G):
 
     NG = nx.Graph()
     for u,v,data in G.edges(data=True):
@@ -25,8 +25,7 @@ def getNodes(G, layout = 0):
     if layout == 0 : lay =  nx.kamada_kawai_layout(G)
     elif layout == 1 : lay =  nx.circular_layout(G)
     elif layout == 2 : lay =  nx.shell_layout(G)
-    elif layout == 3 : lay =  nx.spiral_layout(G)    
-    elif layout == 4 : lay =  nx.bipartite_layout(G)
+    elif layout == 3 : lay =  nx.spiral_layout(G)
     else: lay = nx.planar_layout(G)
 
     nodes = []
@@ -42,8 +41,7 @@ def getEdges(G, layout = 0):
     if layout == 0 : lay =  nx.kamada_kawai_layout(G)
     elif layout == 1 : lay =  nx.circular_layout(G)
     elif layout == 2 : lay =  nx.shell_layout(G)
-    elif layout == 3 : lay =  nx.spiral_layout(G)    
-    elif layout == 4 : lay =  nx.bipartite_layout(G)
+    elif layout == 3 : lay =  nx.spiral_layout(G)
     else: lay = nx.planar_layout(G)
 
     edges = []
@@ -54,14 +52,4 @@ def getEdges(G, layout = 0):
         edges.append(line)
 
     return edges
-
-
-"""
-G = createGridGraph(3,3)
-GW = addRandomWeigrhs(G)
-
-nodes = getNodes(G)
-edges = getEdges(G)
-"""
-
 
