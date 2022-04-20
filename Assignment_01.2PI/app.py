@@ -22,8 +22,8 @@ def createStarGraph():
     G = geo.createGridGraph()
     GW = geo.addRandomWeigths(G)
 
-    nodes = geo.getNodes(GW)
-    edges = geo.getEdges(GW) 
+    nodes = geo.getNodes(G)
+    edges = geo.getEdges(G) 
 
     return nodes, edges
 

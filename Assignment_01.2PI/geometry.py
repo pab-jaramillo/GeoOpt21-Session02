@@ -5,8 +5,8 @@ import random
 def createGridGraph():
 
     G = nx.star_graph(20)
-    G.add_nodes_from([20,21])
-    G.add_edges_from([(19,20), (20,6), (8,16), (16,21)])
+    G.add_nodes_from([10,11])
+    G.add_edges_from([(9,10), (10,3), (4,8), (4,11)])
     return G
 
 def addRandomWeigths(G):
